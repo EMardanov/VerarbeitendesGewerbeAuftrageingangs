@@ -1,9 +1,13 @@
 import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 const API_URL = "https://www-genesis.destatis.de/genesisWS/rest/2020/data/table";
 const PARAMS = {
-    username: "elchinmardanov@yahoo.com",   // Replace with actual username
-    password: "Elchin774411!",   // Replace with actual password
+    username: process.env.GENESIS_USERNAME,
+    password: process.env.GENESIS_PASSWORD,
     name: "42151-0004",
     compress: "false",
     classifyingvariable1: "WZ08Y1",
